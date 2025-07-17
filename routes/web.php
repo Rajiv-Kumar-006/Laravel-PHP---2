@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\user;
 use App\Http\Controllers\StudentController;
+use App\Http\Controllers\ShowApiDataController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -10,9 +11,7 @@ Route::get('/', function () {
 
 Route::get('/user', [user::class, 'users']);
 Route::get('/student', [StudentController::class, 'students']);
-
-
-
+Route::get('/show-api-data', [ShowApiDataController::class, 'showApiData']);
 
 
 
