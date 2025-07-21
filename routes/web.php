@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\user;
 use App\Http\Controllers\StudentController;
 use App\Http\Controllers\ShowApiDataController;
+use App\Http\Controllers\DataBaseBuilder;
 
 Route::get('/', function () {
     return view('welcome');
@@ -14,6 +15,7 @@ Route::get('/student', [StudentController::class, 'students']);
 Route::get('/show-api-data', [ShowApiDataController::class, 'showApiData']);
 
 
+Route::get('/database-builder', [DataBaseBuilder::class, 'queries']);
 
 
 // use Illuminate\Support\Facades\DB;
