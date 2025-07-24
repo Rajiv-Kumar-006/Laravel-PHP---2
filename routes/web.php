@@ -5,6 +5,7 @@ use App\Http\Controllers\user;
 use App\Http\Controllers\StudentController;
 use App\Http\Controllers\ShowApiDataController;
 use App\Http\Controllers\DataBaseBuilder;
+use App\Http\Controllers\LoginForm;
 
 Route::get('/', function () {
     return view('welcome');
@@ -16,6 +17,30 @@ Route::get('/show-api-data', [ShowApiDataController::class, 'showApiData']);
 
 
 Route::get('/database-builder', [DataBaseBuilder::class, 'queries']);
+
+
+// from 
+Route::view("form", "formHandle.loginForm" );
+Route::post("/login-submit", [LoginForm::class, "loginHandle"])->name('login');
+Route::view('/profile', 'formHandle.profile')->name('formHandle.profile');
+Route::get('/logout', [LoginForm::class, 'logout'])->name('logout'); 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 // use Illuminate\Support\Facades\DB;
