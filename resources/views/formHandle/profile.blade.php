@@ -50,13 +50,21 @@
     <div class="profile-container">
         <h2>Profile Page</h2>
 
-        @if(session('email'))
+        <!-- @if(session('email'))
         <h3>Welcome, {{ session('email') }}!</h3>
         @else
         <h3>Please log in to view your profile.</h3>
+        @endif -->
+        @if (session('message'))
+        <div style="color: green; margin-bottom: 10px;">
+            {{ session('message') }}
+        </div>
         @endif
 
-       <a href="logout">Logout</a>
+        <h2>Profile Page</h2>
+        <p>Logged in as: <strong>{{ session('email')}}</strong></p>
+
+        <a href="logout">Logout</a>
     </div>
 
 </body>

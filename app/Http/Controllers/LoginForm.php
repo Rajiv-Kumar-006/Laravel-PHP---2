@@ -7,13 +7,25 @@ use Illuminate\Http\Request;
 class LoginForm extends Controller
 {
     //
-    function loginHandle(Request $request)
+    // function loginHandle(Request $request)
+    // {
+    //     $request->session()->put('email', $request->email);
+    //     // $request->session()->put('password', $request->password);
+    //     // return $request->input('email') . '<br> ' . $request->input('password');
+    //     return redirect()->route('formHandle.profile');
+    // }
+
+    public function loginHandle(Request $request)
     {
+        // Store email in session
         $request->session()->put('email', $request->email);
-        // $request->session()->put('password', $request->password);
-        // return $request->input('email') . '<br> ' . $request->input('password');
+
+        // Flash message
+        $request->session()->flash('message', 'Login successful!');
+
         return redirect()->route('formHandle.profile');
     }
+
 
     function logout(Request $request)
     {
