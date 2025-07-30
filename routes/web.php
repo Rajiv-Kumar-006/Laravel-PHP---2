@@ -6,6 +6,7 @@ use App\Http\Controllers\StudentController;
 use App\Http\Controllers\ShowApiDataController;
 use App\Http\Controllers\DataBaseBuilder;
 use App\Http\Controllers\LoginForm;
+use  App\Http\Controllers\UploadFileController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -26,20 +27,9 @@ Route::view('/profile', 'formHandle.profile')->name('formHandle.profile');
 Route::get('/logout', [LoginForm::class, 'logout'])->name('logout'); 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+// file Uplaod ......
+Route::view('/upload','uploadFile');
+Route::post('uploadfile',[UploadFileController::class, 'fileUpload']);
 
 
 
